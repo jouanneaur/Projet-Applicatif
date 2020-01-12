@@ -66,7 +66,7 @@
 
 
     <!--    Footer-->
-    <div class="jumbotron text-center" style="margin-bottom:0">
+    <div class="jumbotron text-center mb-0">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-12 text-left">

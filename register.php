@@ -59,7 +59,7 @@
         <p>Pour des cours optimaux</p>
     </div>
     <!--    --------------->
-    <div class="container shadow" style="margin-top:30px; margin-bottom:30px;">
+    <div class="container shadow mt-4 mb-4">
         <div class="row">
             <div class="col-lg-6 md-12 border border-left-0  rounded">
                 <h2>SIGN IN</h2>
@@ -112,7 +112,7 @@
     </div>
 
     <!--    Footer-->
-    <div class="jumbotron text-center" style="margin-bottom:0">
+    <div class="jumbotron text-center mb-0">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-12 text-left">

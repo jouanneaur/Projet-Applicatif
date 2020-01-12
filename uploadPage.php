@@ -61,7 +61,7 @@
         </div>
     </nav>
     <!--    Body-->
-    <div class="container shadow" style="margin-top:30px; margin-bottom:30px;">
+    <div class="container shadow mt-4 mb-4">
         <div class="row">
             <div class="col-lg-8 offset-lg-1">>
                     <form action="upload.php" method="post" enctype="multipart/form-data">
@@ -78,7 +78,7 @@
         </div>
     </div>
     <!--    Footer-->
-    <div class="jumbotron text-center" style="margin-bottom:0">
+    <div class="jumbotron text-center mb-0">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-12 text-left">

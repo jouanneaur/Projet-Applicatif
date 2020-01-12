@@ -8,7 +8,7 @@
 	$_SESSION['success'] = "";
 
 	// connect to database
-	$db = mysqli_connect('localhost', 'root', '', 'mini-projet');
+	$db = mysqli_connect('d315s.myd.infomaniak.com', 'd315s_classtoget', 'FromIRtoSEP', 'd315s_mini_projet');
 
 	// REGISTER USER
 	if (isset($_POST['reg_user'])) {
