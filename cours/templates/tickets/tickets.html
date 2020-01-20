@@ -1,0 +1,164 @@
+{% extends 'Crud/base.html' %}
+{% block content %}
+<nav>
+    <!--    Navbar-->
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark sticky-top">
+        <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="{% url 'recherche' %}">Recherche</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'uploadPage' %}">Upload</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'tickets' %}">Tickets</a>
+                </li>
+            </ul>
+        </div>
+        <div class="mx-auto order-0">
+            <a class="navbar-brand mx-auto" href="{% url 'home' %}">ClassTogether</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-collapse2">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+        <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#"></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="{% url 'perso' %}">Page Perso</a></li>
+                        <li><a href="{% url 'mescours' %}">Mes cours</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-danger" href="{% url 'home' %}">Logout</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!--    Body-->
+    <div class="container shadow" style="margin-top:30px; margin-bottom:30px;">
+        <h2>Tickets disponible</h2>
+        <div class="row mt-4">
+            <!--Code exemple-->
+            <div class="col-lg-4 mb-4">
+                <div class="card" data-toggle="modal" data-target="#myModal1">
+                    <div class="card-body text-center">
+                        <div class="row">
+                            <h5 class="card-title col-12">Statistiques 2ème partie</h5>
+                        </div>
+                        <p class="card-text border-top overflow-hidden mt-2">Problème partie Statistique multivariées
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 mb-4">
+                <div class="card" data-toggle="modal" data-target="#myModal1">
+                    <div class="card-body text-center">
+                        <div class="row">
+                            <h5 class="card-title col-12">Ondes et Signaux</h5>
+                        </div>
+                        <p class="card-text border-top overflow-hidden mt-2">Problème partie équation de Maxwell</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 mb-4">
+                <div class="card" data-toggle="modal" data-target="#myModal1">
+                    <div class="card-body text-center">
+                        <div class="row">
+                            <h5 class="card-title col-12">Ondes et Signaux</h5>
+                        </div>
+                        <p class="card-text border-top overflow-hidden mt-2">Problème partie dévelopé de Fourier</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 mb-4">
+                <div class="card" data-toggle="modal" data-target="#myModal1">
+                    <div class="card-body text-center">
+                        <div class="row">
+                            <h5 class="card-title col-12">Statistiques 3ème partie</h5>
+                        </div>
+                        <p class="card-text border-top overflow-hidden mt-2">Partie Statistiques solovariées</p>
+                    </div>
+                </div>
+            </div>
+
+
+            <!--Fin code exemple-->
+        </div>
+        <!-- Modal qui devra s'auto générer -->
+        <div class="modal" id="myModal1">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                        <div class="container">
+                            <div class="row">
+                                <h4 class="modal-title">Statistiques 2ème partie</h4>
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-12 fluid border-right border-bottom">
+                                <h5>Problème partie Statistique multivariées</h5>
+                            </div>
+                        </div>
+                        <br>
+                        <h5>Description :</h5>
+                        <p>Bonjour, <br><br>
+                            Suite à la lecture de ce cours je ne peux m'empécher de me demander<br>
+                            Comment résoudre l'équation page 2 au début du chapitre <br>
+                            J'ai fais quelques tentative de mon côtés mais la démarche et le plan à suivre
+                            m'échappe<br><br>
+                            Dans l'attente de votre réponse,<br>
+                            Didier,
+                        </p>
+                    </div>
+                    <!-- Modal footer -->
+                    <div class="modal-footer">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-6 ">
+                                    <button type="button" class="btn btn-danger btn-block">Refuser</button>
+                                </div>
+                                <div class="col-6">
+                                    <button type="button" class="btn btn-primary btn-block">Aider</button><br>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--    Footer-->
+        <div class="jumbotron text-center" style="margin-bottom:0">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-12 text-left">
+                        <h4>COPYRIGHT</h4>
+                    </div>
+                    <div class="col-lg-4 md-12 offset-lg-2 offset-md-1">
+                        <h5>CONTACTER NOUS :</h5>
+                        <br>
+                        <div class="text-center">
+                            Mail: <a href="mail:romain.jouanneau@example.com"
+                                target="_top">romain.jouanneau@example.com</a>
+                            <br>Adresse : 12 Route de Tours, 92300, Lille
+                            <br>Phone : +33 5 43 61 76 95
+                        </div>
+                    </div>
+                    <div class="col-lg-4 md-12 offset-lg-1">
+                        <h5>PARTENAIRES :</h5>
+                        <br>
+                        <div class="text-center">
+                            <h6>ESAIP</h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endblock %}
