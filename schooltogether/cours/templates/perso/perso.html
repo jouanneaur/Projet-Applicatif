@@ -1,0 +1,80 @@
+{% extends 'Crud/base.html' %}
+{% block content %}
+
+<nav>
+    <!--Navbar-->
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark sticky-top">
+        <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="{% url 'recherche' %}">Recherche</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'uploadPage' %}">Upload</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'tickets' %}">Tickets</a>
+                </li>
+            </ul>
+        </div>
+        <div class="mx-auto order-0">
+            <a class="navbar-brand mx-auto" href="{% url 'home' %}">ClassTogether</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-collapse2">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+        <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#"></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="{% url 'perso' %}">Page Perso</a></li>
+                        <li><a href="{% url 'mescours' %}">Mes cours</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-danger" href="{% url 'home' %}">Logout</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container shadow" style="margin-top:30px; margin-bottom:30px;">
+        <div class="row">
+            <div class="col-lg-8 offset-lg-1">
+                <label for="nom">Nom de l'utilisateur: gwendal</label><br></br>
+                <label for="mail">Mail: gquellec.ir2021@esaip.org</label><br></br>
+                <label for="filiere">Filière: ingénieur informatique et résaux</label><br></br>
+                <h5>Modification des informations</h5>
+                <div class="form-group">
+                    <button type="submit" value="Upload" class="btn btn-info" name="submit">Modification</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Footer-->
+    <div class="jumbotron text-center" style="margin-bottom:0">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12 text-left">
+                    <h4>COPYRIGHT</h4>
+                </div>
+                <div class="col-lg-4 md-12 offset-lg-2 offset-md-1">
+                    <h5>CONTACTER NOUS :</h5>
+                    <br>
+                    <div class="text-center">
+                        Mail: <a href="mail:romain.jouanneau@example.com" target="_top">romain.jouanneau@example.com</a>
+                        <br>Adresse : 12 Route de Tours, 92300, Lille
+                        <br>Phone : +33 5 43 61 76 95
+                    </div>
+                </div>
+                <div class="col-lg-4 md-12 offset-lg-1">
+                    <h5>PARTENAIRES :</h5>
+                    <br>
+                    <div class="text-center">
+                        <h6>ESAIP</h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endblock %}

@@ -1,0 +1,135 @@
+{% extends 'Crud/base.html' %}
+{% block content %}
+{% if user.is_authenticated %}
+<nav>
+     <!--    Navbar-->
+     <nav class="navbar navbar-expand-md navbar-dark bg-dark sticky-top">
+        <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="{% url 'recherche' %}">Recherche</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'uploadPage' %}">Upload</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'tickets' %}">Tickets</a>
+                </li>
+            </ul>
+        </div>
+        <div class="mx-auto order-0">
+            <a class="navbar-brand mx-auto" href="{% url 'home' %}">ClassTogether</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-collapse2">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+        <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#"></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="{% url 'perso' %}">Page Perso</a></li>
+                        <li><a href="{% url 'mescours' %}">Mes cours</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-danger" href="{% url 'home' %}">Logout</a>
+                </li>
+            </ul>
+        </div>
+    </nav>    
+        {% else %}
+        <!--    Navbar-->
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark sticky-top">
+        <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="{% url 'login' %}">Recherche</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'login' %}">Upload</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'login' %}">Tickets</a>
+                </li>
+            </ul>
+        </div>
+        <div class="mx-auto order-0">
+            <a class="navbar-brand mx-auto" href="{% url 'home' %}">ClassTogether</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-collapse2">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+        <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
+            <ul class="navbar-nav ml-auto bg-primary rounded">
+                <li class="nav-item">
+                    <a class="nav-link text-light" href="{% url 'login' %}">Sign-In | Sign-up</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    {% endif %}
+    <!--    --------------->
+    <div class="jumbotron text-center">
+        <h1>ClassTogether</h1>
+        <p>Pour des cours optimaux</p>
+    </div>
+    <!--    --------------->
+    <div class="container shadow" style="margin-top:30px; margin-bottom:30px;">
+ <div class="row">
+  <div class="col-md-1 col-xs-1 col-sm-1"></div>
+   <div  class="col-md-10 col-xs-10 col-sm-10">
+    <h3 class="round3" style="text-align:center;">Posts</h3>
+  </div>
+  <div class="col-md-1 col-xs-1 col-sm-1"></div>
+ </div>
+ <div class="row">
+  <div class="col-md-10 col-xs-10 col-sm-10"></div>
+  <div class="col-md-2 col-xs-1 col-sm-1">
+   <br/>
+            <a href="{% url 'post' %}">
+              <button type="button" class="btn btn-success">
+                <span class="glyphicon glyphicon-plus"></span>
+              </button>
+            </a>
+  </div>
+ </div>
+ <br/>
+ {% for post in post_list %}
+  <div class="row"> 
+   <div class="col-md-1 col-xs-1 col-sm-1"></div> 
+   <div class="col-md-7 col-xs-7 col-sm-7">
+    <ul class="list-group">
+     
+       <li class="list-group-item ">
+     <a href="{% url 'detail' post.pk %}">{{ post.title }}</a>  <span class="badge"></span>
+    </li> 
+     </ul>
+    <br>
+   </div>
+   <div class="col-md-1 col-xs-1 col-sm-1">
+    <a href="{% url 'detail' post.pk %}">
+     <button type="button" class="btn btn-info">
+      <span class="glyphicon glyphicon-open"></span>
+     </button>
+    </a>
+   </div>
+   <div class="col-md-1">
+    <a href="{% url 'edit' post.pk %}">
+     <button type="button" class="btn btn-info">
+      <span class="glyphicon glyphicon-pencil"></span>
+     </button>
+    </a>
+   </div>
+   <div class="col-md-1">
+    <a href="{% url 'delete' post.pk %}">
+     <button type="button" class="btn btn-danger">
+      <span class="glyphicon glyphicon-trash"></span>
+     </button>
+    </a>
+   </div>
+   <div class="col-md-1 col-xs-1 col-sm-1"></div>
+  </div>
+ {% endfor %}
+</div>
+{% endblock %}
